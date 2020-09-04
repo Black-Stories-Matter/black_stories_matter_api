@@ -3,6 +3,11 @@ class BooksController < ApplicationController
   def new
   end
 
+  def show
+    @book = Book.find(params[:id])
+    @author = Author.find(@book.author_id)
+  end
+
   def create
     response = Faraday.get("https://www.googleapis.com/books/v1/volumes?q=isbn:#{params[:isbn]}")
     json = JSON.parse(response.body, symbolize_names: true)
@@ -15,13 +20,21 @@ class BooksController < ApplicationController
     end
 
     book = Book.create(isbn: params[:isbn],
-                       title: json[:items][0][:volumeInfo][:title],
-                       cover_image: json[:items][0][:volumeInfo][:imageLinks][:thumbnail],
-                       description: json[:items][0][:volumeInfo][:description],
-                       publication_date: json[:items][0][:volumeInfo][:publishedDate],
-                       category: json[:items][0][:volumeInfo][:categories][0],
-                       maturity: json[:items][0][:volumeInfo][:maturityRating],
-                       info_link: json[:items][0][:volumeInfo][:infoLink])
+                    title: json[:items][0][:volumeInfo][:title],
+                    cover_image: json[:items][0][:volumeInfo][:imageLinks][:thumbnail],
+                    description: json[:items][0][:volumeInfo][:description],
+                    publication_date: json[:items][0][:volumeInfo][:publishedDate],
+                    category: json[:items][0][:volumeInfo][:categories][0],
+                    maturity: json[:items][0][:volumeInfo][:maturityRating],
+                    info_link: json[:items][0][:volumeInfo][:infoLink],
+                    author_id: book_authors[0].id)
 
+    if book.save
+      redirect_to "/books/#{book.id}"
+      flash[:success] ="You succesfully added a book to the database"
+    else
+      flash[:notice] = "Book not created, please try again"
+      render :new
+    end
   end
 end
