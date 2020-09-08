@@ -1,0 +1,16 @@
+<h1><%= @book.title %></h1>
+
+<h2><Book Details</h2>
+  <p> Authors: </p>
+    <% @authors.each do |author| %>
+      <p><%= author.name %></p> 
+    <% end %>
+  <p> Description: <%= @book.description %> </p>
+  <p> ISBN: <%= @book.isbn %> </p>
+  <p> <%= link_to "Cover Image", @book.cover_image %> </p>
+  <p> Publication Date: <%= @book.publication_date %> </p>
+  <p> Category: <%= @book.category %> </p>
+  <p> Maturity: <%= @book.maturity %> </p>
+  <%= link_to "More Info", @book.info_link %> </br>
+
+ <%= link_to "Add Another Book", "/books/new" %>
