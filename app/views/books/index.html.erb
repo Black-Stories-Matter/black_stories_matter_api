@@ -1,0 +1,6 @@
+<h1>All Books in Database</h1>
+<p> Click each book to see it's details</p>
+
+<% @books.each do |book| %>
+  <li><%= link_to book.title, "/books/#{book.id}" %></li>
+<% end %>
