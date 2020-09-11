@@ -15,5 +15,22 @@ RSpec.describe "As a visitor,", type: :feature do
       expect(current_path).to eq("/books/#{book.id}")
 
     end
+
+    it "doesn't allow you to enter the same book twice" do
+    visit '/books/new'
+
+    fill_in :isbn, with: "0439023440"
+
+    click_on "Submit"
+
+    visit '/books/new'
+
+    fill_in :isbn, with: "0439023440"
+
+    click_on "Submit"
+
+    expect(page).to have_content("Book not created, please try again")
+
+    end 
   end
 end
