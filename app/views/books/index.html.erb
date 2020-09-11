@@ -4,5 +4,5 @@
 <% @books.each do |book| %>
   <li><%= link_to book.title, "/books/#{book.id}" %></li>
 <% end %>
-
-<%= link_to "Add Another Book", "/books/new" %>
+</br>
+<b><%= link_to "Add Another Book", "/books/new" %></b>
