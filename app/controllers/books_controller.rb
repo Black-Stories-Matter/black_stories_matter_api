@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all 
+    @books = Book.all
   end
 
   def new
@@ -16,7 +16,6 @@ class BooksController < ApplicationController
     response = Faraday.get("https://www.googleapis.com/books/v1/volumes?q=isbn:#{params[:isbn]}")
     json = JSON.parse(response.body, symbolize_names: true)
 
-    #need to go back and change relationship to many to many to add authors to books
 
 
     book = Book.create(isbn: params[:isbn],
