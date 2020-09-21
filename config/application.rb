@@ -36,7 +36,7 @@ end
 
 config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000'
+    origins 'https://black-stories-matter-api.herokuapp.com/'
     resource '/books',
       methods: [:get],
       headers: :any,
