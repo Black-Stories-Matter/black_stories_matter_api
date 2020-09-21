@@ -31,15 +31,10 @@ module BlackStoriesMatterApi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-  end
-end
-
-config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins 'https://black-stories-matter-api.herokuapp.com/'
-    resource '/books',
-      methods: [:get],
-      headers: :any,
-      credentials: false
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+       resource '*', headers: :any, methods: [:get]
+      end
+    end
   end
 end
