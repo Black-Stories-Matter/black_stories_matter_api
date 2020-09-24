@@ -1,7 +1,9 @@
 <h1>Add A Book to the Black Voices Matter Database</h1>
 
+<p>Please only enter ISBN-10 numbers and remove all dashes before entering</p>
+
 <%= form_tag "/books" do %>
-  <%= label_tag "ISBN Number" %>
+  <%= label_tag "ISBN-10 Number" %>
   <%= text_field_tag :isbn %><br>
   <%= submit_tag 'Submit' %>
 <% end %>
