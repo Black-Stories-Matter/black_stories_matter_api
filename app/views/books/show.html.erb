@@ -3,7 +3,7 @@
 <h2><Book Details</h2>
   <p> Authors: </p>
     <% @authors.each do |author| %>
-      <p><%= author.name %></p> 
+      <p><%= author.name %></p>
     <% end %>
   <p> Description: <%= @book.description %> </p>
   <p> ISBN: <%= @book.isbn %> </p>
@@ -14,3 +14,4 @@
   <%= link_to "More Info", @book.info_link %> </br>
 
  <%= link_to "Add Another Book", "/books/new" %>
+ <%= link_to "Delete Book", "/books/#{@book.id}", method: :delete %>
