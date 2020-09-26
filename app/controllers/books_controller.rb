@@ -44,4 +44,10 @@ class BooksController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    Book.destroy(params[:id])
+    redirect_to '/books'
+    flash[:success] ="You succesfully deleted a book from the database"
+  end
 end

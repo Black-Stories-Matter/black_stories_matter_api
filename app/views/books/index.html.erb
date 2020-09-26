@@ -2,7 +2,10 @@
 <p> Click each book to see it's details</p>
 
 <% @books.each do |book| %>
+  <section id= 'book-<%=book.id%>'>
   <li><%= link_to book.title, "/books/#{book.id}" %></li>
+  <li><%= link_to "Delete Book", "/books/#{book.id}", method: :delete %>
+  </section>
 <% end %>
 </br>
 <b><%= link_to "Add Another Book", "/books/new" %></b>

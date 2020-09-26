@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get "/books/new", to: "books#new"
   get "books/:id", to: "books#show"
   post "/books", to: "books#create"
+  delete "/books/:id", to: "books#destroy"
 
   namespace :api do
     namespace :v1 do
       get "/books", to: "books#index"
     end
-  end 
+  end
 end
