@@ -3,8 +3,7 @@
 
 <% @books.each do |book| %>
   <section id= 'book-<%=book.id%>'>
-  <li><%= link_to book.title, "/books/#{book.id}" %>
-  <%= link_to "Delete Book", "/books/#{book.id}", method: :delete %></li>
+  <li><%= link_to book.title, "/books/#{book.id}" %> </li>
   </section>
 <% end %>
 </br>
