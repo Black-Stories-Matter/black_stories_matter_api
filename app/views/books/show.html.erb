@@ -1,6 +1,6 @@
-<h1><%= @book.title %></h1>
+<h3><%= @book.title %></h3>
 
-<h2><Book Details</h2>
+<h4>Book Details</h4>
   <p> Authors: </p>
     <% @authors.each do |author| %>
       <p><%= author.name %></p>
@@ -11,7 +11,9 @@
   <p> Publication Date: <%= @book.publication_date %> </p>
   <p> Category: <%= @book.category %> </p>
   <p> Maturity: <%= @book.maturity %> </p>
-  <%= link_to "More Info", @book.info_link %> </br>
+  <%= link_to "More Info", @book.info_link %> </br></br>
 
- <%= link_to "Add Another Book", "/books/new" %>
- <%= link_to "Delete Book", "/books/#{@book.id}", method: :delete %>
+
+ <hr>
+ <%= link_to "Add Another Book", "/books/new" %></br>
+<%= link_to "Delete Book", "/books/#{@book.id}", method: :delete %>
