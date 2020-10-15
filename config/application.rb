@@ -37,6 +37,10 @@ module BlackStoriesMatterApi
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
       allow do
+        origins 'http://localhost:5000'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      end
+      allow do
         origins 'http://blackstoriesmatter.herokuapp.com'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
