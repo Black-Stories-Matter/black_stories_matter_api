@@ -37,7 +37,7 @@ module BlackStoriesMatterApi
       #   resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       # end
       allow do
-        origins 'https://blackstoriesmatter.herokuapp.com'
+        origins 'http://blackstoriesmatter.herokuapp.com'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
