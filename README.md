@@ -3,9 +3,7 @@ The goal of Black Stories Matter API is to build a database of children's books 
 If a book is not already listed, users can visit the API interface to add children's books by Black authors to the database.
 Add a title by entering the 10 digit ISBN number assigned to each separate edition and variation of a publication to add it to the database.
 
-![Screenshots](api-ui.png)
-
-[Deployed Application](https://black-stories-matter-api.herokuapp.com/)
+Visit the [API Interface](https://black-stories-matter-api.herokuapp.com/)
 
 ## Technologies
 Things you may want to cover:
