@@ -1,5 +1,5 @@
 <h3>All Books in Database</h3>
-<h5>Click each book to see it's details</h5>
+<h5>Click any book for more information!</h5>
 
 <% @books.each do |book| %>
   <section id= 'book-<%=book.id%>'>
@@ -7,4 +7,4 @@
   </section>
 <% end %>
 </br>
-<b><%= link_to "Add Another Book", "/books/new" %></b>
+<b><%= link_to "Add Another Book", "/books/new" %></b><br>
