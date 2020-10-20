@@ -5,7 +5,7 @@ Add a title by entering the 10 digit ISBN number assigned to each separate editi
 
 Visit the [API Interface](https://black-stories-matter-api.herokuapp.com/)
 
-##Local Setup
+## Local Setup
 
 - Clone
 - bundle
