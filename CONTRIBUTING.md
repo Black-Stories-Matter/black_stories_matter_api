@@ -9,7 +9,7 @@ What does it take to be an open source contributor? Just a GitHub account, some 
 ## 2. Make and download your copy
 - Fork the repository to make a copy of the project to work from.
 - Clone the fork to download to your local machine.
-- Run `npm install` to install the dependencies.
+- Run `bundle` to install the dependencies.
 
 ## 3. Make a git branch
 - Use command `git-checkout-b` with a descriptive name for your branch that summarizes the issue you are working on.
