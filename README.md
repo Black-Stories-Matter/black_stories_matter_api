@@ -7,7 +7,7 @@ Visit the [API Interface](https://black-stories-matter-api.herokuapp.com/)
 
 ## Local Setup
 
-- Clone
+- clone
 - bundle
 - rails db:{create,migrate,seed}
 - rails s
