@@ -25,7 +25,7 @@ Visit the [API Interface](https://black-stories-matter-api.herokuapp.com/)
 We would like to continue adding books to the database and add more functionality to the front end user interface.
 Please see the [CONTRIBUTING](CONTRIBUTING.md) file if you are interested in making an open source contribution to this project!
 
-## Contributors
+## Maintainers
 - Back End [Repo](https://github.com/Black-Stories-Matter/black_stories_matter_api)
   - [Krista Stadler](https://github.com/kristastadler)
 - Front End [Repo](https://github.com/Black-Stories-Matter/black-stories-matter-fe)
