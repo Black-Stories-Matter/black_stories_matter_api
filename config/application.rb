@@ -33,17 +33,25 @@ module BlackStoriesMatterApi
     config.generators.system_tests = nil
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000'
-        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
-      end
-      allow do
-        origins 'http://localhost:5000'
-        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
-      end
-      allow do
-        origins 'http://blackstoriesmatter.herokuapp.com'
-        resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
-      end
+       origins '*'
+       resource(
+         '*',
+         headers: :any,
+         methods: [:get, :patch, :put, :delete, :post, :options]
+         )
+     end
+      # allow do
+      #   origins 'http://localhost:3000'
+      #   resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      # end
+      # allow do
+      #   origins 'http://localhost:5000'
+      #   resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      # end
+      # allow do
+      #   origins 'http://blackstoriesmatter.herokuapp.com'
+      #   resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
+      # end
     end
   end
 end
