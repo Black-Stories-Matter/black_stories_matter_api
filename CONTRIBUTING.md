@@ -26,4 +26,4 @@ What does it take to be an open source contributor? Just a GitHub account, some 
 - Fill out the pull request template for the maintainers to review.
 - Leave the box checked that says "allow edits from maintainers" and click Create Pull Request to finish making the PR.
 
-### Once your work is approved, it will be merged in and you will be added as a contributor to the README. Thank you!
+### Once your work is approved, it will be merged in and you will be added as a contributor. Thank you!
