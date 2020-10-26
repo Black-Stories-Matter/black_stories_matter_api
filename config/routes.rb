@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get "/authors/:id", to: "authors#show"
       get "/books", to: "books#index"
+      get "/books/:id", to: "books#show"
     end
   end
 end
