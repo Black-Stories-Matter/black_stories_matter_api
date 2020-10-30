@@ -1,7 +1,8 @@
 class AuthorSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, 
-  					 :name, 
-  					 :created_at, 
-  					 :updated_at
+
+  set_type :author
+  set_id :id
+  attributes :name
+
 end

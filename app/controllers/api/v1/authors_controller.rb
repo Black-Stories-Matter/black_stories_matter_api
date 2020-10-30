@@ -1,4 +1,5 @@
 class Api::V1::AuthorsController < ApplicationController
+
   def index
     authors = Author.all
     render json: AuthorSerializer.new(authors)
@@ -10,4 +11,5 @@ class Api::V1::AuthorsController < ApplicationController
    rescue ActiveRecord::RecordNotFound
    	render json: { code: "404", message: "Author Not Found" }
   end
+
 end
