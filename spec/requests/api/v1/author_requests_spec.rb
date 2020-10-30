@@ -17,4 +17,15 @@ describe 'Authors API' do
     expect(results[:data].size).to eq(2)
     expect(results[:data].map { |author_hash| author_hash[:type] }.uniq).to eq(["author"])
   end
+
+  it "retrieves individual author information" do
+    test_author = Author.create(name: "AuthorTest")
+
+    get "/api/v1/authors/#{test_author.id}"
+    result = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    expect(result.size).to eq(1)
+  end
 end
