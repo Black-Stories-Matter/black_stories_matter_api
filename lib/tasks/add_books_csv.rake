@@ -9,7 +9,6 @@ task :add_books_from_csv, [:filename] => :environment do |t, args|
 		p "File not specified or Does not Exist"
 	else
 		CSV.foreach(args.filename, :headers => false) do |row|
-			puts "ISBN: #{row.first}"
 			if is_isbn10?(row.first)
 				book = BookService.new.create_book(row.first)
 				authors = BookService.new.create_author(row.first, book)
