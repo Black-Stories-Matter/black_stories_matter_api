@@ -10,14 +10,16 @@ class BookService
 
   def create_book(isbn)
     json = JSON.parse(conn(isbn).body, symbolize_names: true)
+    volume_info = json[:items][0][:volumeInfo]
+
     Book.create(isbn: isbn,
-                title: json[:items][0][:volumeInfo][:title],
-                cover_image: json[:items][0][:volumeInfo][:imageLinks][:thumbnail],
-                description: json[:items][0][:volumeInfo][:description],
-                publication_date: json[:items][0][:volumeInfo][:publishedDate],
-                category: json[:items][0][:volumeInfo][:categories][0],
-                maturity: json[:items][0][:volumeInfo][:maturityRating],
-                info_link: json[:items][0][:volumeInfo][:infoLink])
+                title: volume_info[:title],
+                cover_image: volume_info[:imageLinks][:thumbnail],
+                description: volume_info[:description],
+                publication_date: volume_info[:publishedDate],
+                category: volume_info[:categories].nil? ? nil : volume_info[:categories][0],
+                maturity: volume_info[:maturityRating],
+                info_link: volume_info[:infoLink])
   end
 
   def create_author(isbn, book)
