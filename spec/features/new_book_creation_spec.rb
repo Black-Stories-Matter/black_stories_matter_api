@@ -48,7 +48,7 @@ RSpec.describe "As a visitor,", type: :feature do
       expect(page).to have_content("We could not complete your request. Please make sure you entered an ISBN-10 with no dashes.")
     end
 
-    it "allows me to add new book, with no category assignements, to the database" do
+    it "allows me to add new book, with no category assignments, to the database" do
       visit '/books/new'
 
       fill_in :isbn, with: "0241346843"
