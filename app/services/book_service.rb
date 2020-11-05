@@ -14,7 +14,7 @@ class BookService
 
     Book.create(isbn: isbn,
                 title: volume_info[:title],
-                cover_image: volume_info[:imageLinks][:thumbnail],
+                cover_image: volume_info[:imageLinks].nil? ? nil : volume_info[:imageLinks][:thumbnail],
                 description: volume_info[:description],
                 publication_date: volume_info[:publishedDate],
                 category: volume_info[:categories].nil? ? nil : volume_info[:categories][0],
