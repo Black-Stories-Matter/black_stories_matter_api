@@ -10,23 +10,23 @@ task :add_books_from_csv, [:filename] => :environment do |t, args|
 	else
 		CSV.foreach(args.filename, :headers => false) do |row|
 			begin
-				if is_isbn10?(row.first)
+				if isbn10?(row.first)
 					book = BookService.new.create_book(row.first)
 					authors = BookService.new.create_author(row.first, book)
 					
 					if !book.nil? && !authors.nil?
 						if book.save
-							puts "#{row.first} has been added"
+							puts "ISBN #{row.first} has been added"
 						else
 							puts "Unable to add: #{row.first}"
 						end
 					end
 				else
-					puts "#{row.first} is not an ISBN 10, skipping"
+					puts "#{row.first} is not an ISBN-10, skipping"
 				end
 			
 			rescue => e
-				puts "Error creating book for ISBN: #{row.first}"
+				puts "Error creating book for #{row.first}"
 				next
 			end
 		end
