@@ -15,7 +15,6 @@ class BooksController < ApplicationController
   def create
     if params[:isbn].length == 10
       book = BookService.new.create_book(params[:isbn])
-      authors = BookService.new.create_author(params[:isbn], book)
       if book.save
         redirect_to "/books/#{book.id}"
         flash[:success] ="You succesfully added a book to the database"
